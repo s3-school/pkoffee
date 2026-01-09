@@ -19,7 +19,7 @@ jobs:
 
   unit-tests:
     runs-on: ${{ matrix.os }}
-    needs: code-checks # don't bother running tests if code-checks fails.
+    needs: code-quality # don't bother running tests if code-checks fails.
 
     strategy:
       fail-fast: false # don't stop all jobs if one fails
