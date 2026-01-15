@@ -5,7 +5,10 @@ from scipy.optimize import curve_fit
 from pathlib import Path
 import seaborn as sns
 
-data = pd.read_csv("coffee_productivity.csv")
+# Get the project root directory (two levels up from this script)
+project_root = Path(__file__).parent.parent.parent
+data_path = project_root / "data" / "coffee_productivity.csv"
+data = pd.read_csv(data_path)
 X = data["cups"].values
 Y = data["productivity"].values
 
