@@ -26,8 +26,8 @@ MODELS=[
 {"name":"quadratic","p0":[y_min,0.0,0.01],"bounds":(-np.inf,np.inf),"f":lambda xx,a0,a1,a2:a0+a1*xx+a2*xx**2},
 {"name":"saturating","p0":[dy,max(1.0,0.2*(x_min+x_max)),y_min],"bounds":([-np.inf,0.0,-np.inf],[np.inf,np.inf,np.inf]),"f":lambda xx,Vmax,K,y0:y0+Vmax*(xx/np.maximum(K+xx,1e-9))},
 {"name":"logistic","p0":[dy,0.5,0.5*(x_min+x_max),y_min],"bounds":([-np.inf,0.0,-np.inf,-np.inf],[np.inf,np.inf,np.inf,np.inf]),"f":lambda xx,L,k,x0,y0:y0+L/(1.0+np.exp(-k*(xx-x0)))},
-{"name":"peak","p0":[max(y_min,y_max),max(1.0,0.5*(x_min+x_max))],"bounds":([-np.inf,0.0],[np.inf,np.inf]),"f":lambda xx,a,b:a*xx*np.exp(-xx/np.maximum(b,1e-9))},
-{"name":"peak2","p0":[max(1e-6,y_max/max(1.0,x_max**2)),max(1.0,0.5*(x_min+x_max))],"bounds":([-np.inf,0.0],[np.inf,np.inf]),"f":lambda xx,a,b:a*(xx**2)*np.exp(-xx/np.maximum(b,1e-9))},
+#{"name":"peak","p0":[max(y_min,y_max),max(1.0,0.5*(x_min+x_max))],"bounds":([-np.inf,0.0],[np.inf,np.inf]),"f":lambda xx,a,b:a*xx*np.exp(-xx/np.maximum(b,1e-9))},
+#{"name":"peak2","p0":[max(1e-6,y_max/max(1.0,x_max**2)),max(1.0,0.5*(x_min+x_max))],"bounds":([-np.inf,0.0],[np.inf,np.inf]),"f":lambda xx,a,b:a*(xx**2)*np.exp(-xx/np.maximum(b,1e-9))},
 ]
 
 fits=[]
