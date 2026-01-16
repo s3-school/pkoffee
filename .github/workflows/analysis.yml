@@ -1,0 +1,28 @@
+name: do analysis
+on: [push]
+
+jobs:
+    make-plot:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: checkout the code
+              uses: actions/checkout@v6
+
+            - name: install pixi
+              uses: prefix-dev/setup-pixi@v0.9.3
+              with:
+                pixi-version: v0.63.0
+
+            - run: |
+                   cd analysis
+                   pixi run "pkoffee analyze -d coffee_productivity.csv --output fitted_models.toml --show-rankings"
+                   pixi run "pkoffee plot -d coffee_productivity.csv  -m fitted_models.toml -o analysis.png"
+
+            - name: upload results
+              uses: actions/upload-artifact@v6
+              with:
+                name: results
+                path: analysis/analysis.png
+                      
+        
