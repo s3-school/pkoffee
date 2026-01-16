@@ -1,0 +1,8 @@
+name: check that code works
+on: [push]
+
+jobs:
+    say-hello:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "Running tests on ${{runner.os}}"
