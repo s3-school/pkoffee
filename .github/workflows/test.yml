@@ -16,17 +16,12 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v4
 
-      - name: Install pixi
-        uses: prefix-dev/setup-pixi@v0.8.1
-        with:
-          pixi-version: v0.39.5 # Dobrze jest to przypiąć, póki pixi nie ma wersji 1.0!
-
       - name: look for syntax errors
         run: pixi run ruff check
 
   unit-tests:
     runs-on: ubuntu-latest
-    needs: code-checks # Testy nie ruszą, jeśli code-checks zakończy się błędem.
+    needs: code-checks
     steps:
       - name: Checkout the code
         uses: actions/checkout@v4
