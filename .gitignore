@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # Pixi
 .pixi/
 !.pixi/config.toml
@@ -149,3 +150,8 @@ dmypy.json
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+=======
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+>>>>>>> Stashed changes

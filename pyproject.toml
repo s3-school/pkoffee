@@ -8,10 +8,15 @@ version = "0.1.0"
 description = "Coffee productivity analysis with statistical modeling"
 readme = "README.md"
 requires-python = ">=3.12"
+<<<<<<< Updated upstream
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [
     { name = "Thomas Vuillaume", email = "thomas.vuillaume@lapp.in2p3.fr" },
+=======
+authors = [
+    { name = "The Chuong TRINH", email = "the.chuong.trinh@example.com" },
+>>>>>>> Stashed changes
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -24,9 +29,15 @@ classifiers = [
 ]
 
 [project.urls]
+<<<<<<< Updated upstream
 "Homepage" = "https://github.com/s3-school/pkoffee"
 "Bug Tracker" = "https://github.com/s3-school/pkoffee/issues"
 "Documentation" = "https://github.com/s3-school/pkoffee/blob/main/README.md"
 
 [project.scripts]
 pkoffee = "pkoffee.cli:main"
+=======
+"Homepage" = "https://github.com/s3-school/pkoffee-solution"
+"Bug Tracker" = "https://github.com/s3-school/pkoffee-solution/issues"
+"Documentation" = "https://github.com/s3-school/pkoffee-solution/blob/main/README.md"
+>>>>>>> Stashed changes
