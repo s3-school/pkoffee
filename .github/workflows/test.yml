@@ -1,0 +1,9 @@
+name: The first test workflow
+on: [push]
+jobs:
+  the-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - run: "echo 'Running tests on: ${{runner.os}}'"
+      - run: "echo 'Repo: &{{github.repository}}'"
+      - run: "echo 'Branch: &{{github.ref}}'"
