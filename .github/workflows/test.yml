@@ -7,4 +7,16 @@ jobs:
             - run: "echo 'Running tests on: ${{ runner.os }}'"
             - run: "echo 'Repo: ${{ github.repository }}'"
             - run: "echo 'Branch: ${{ github.ref }}'"
+            
+            - name: checkout the code
+              uses: actions/checkout@v6
+
+            - name: install pixi
+              uses: prefix-dev/setup-pixi@v0.9.3
+              with:
+                pixi-version: v0.63.0
+
+            - name: run the tests
+              run: pixi run pytest -v
+            
 
