@@ -12,6 +12,7 @@ python = ["3.12.*", "3.13.*", "3.14.*"]
 [dependencies]
 pkoffee = { path = "." }
 
+
 [package]
 name = "pkoffee"
 version = "0.1.0"
@@ -58,6 +59,13 @@ python=">=3.13,<3.14"
 [feature.py314.dependencies]
 python=">=3.14,<3.15"
 
+[feature.test.dependencies]
+pytest = "9.*"
+
+[feature.test.tasks]
+test = "pytest"
+
+
 [feature.dev.dependencies]
 jupyterlab = ">=4.4.3,<5"
 pytest= "*"
@@ -73,3 +81,5 @@ prod314 = { features = ["py314"], solve-group = "prod314" }
 
 # python 3.12 environments for testing
 prod312 = { features = ["py312"], solve-group = "prod312" }
+
+test = { features = ["test"], solve-group = "default" }
