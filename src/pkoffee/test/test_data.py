@@ -1,7 +1,6 @@
 import pytest
 import pandas as pd
-import numpy as np
-from pkoffee.data import validate, ColumnTypeError, MissingColumnsError
+from pkoffee.data import validate, MissingColumnsError
 
 def test_validate_success():
     df = pd.DataFrame({
