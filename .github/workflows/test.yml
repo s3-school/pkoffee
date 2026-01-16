@@ -1,0 +1,10 @@
+name: A simple test workflow
+on: [push]   # when to run this workflow, on every push
+jobs:
+    unit-tests:  # this can be any name: you choose it
+        runs-on: ubuntu-latest   # which OS to start up
+        steps:   # what steps to run in this job
+            - run: "echo 'Running tests on: ${{ runner.os }}'"
+            - run: "echo 'Repo: ${{ github.repository }}'"
+            - run: "echo 'Branch: ${{ github.ref }}'"
+
