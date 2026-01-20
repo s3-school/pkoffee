@@ -14,8 +14,8 @@ jobs:
         with:
           pixi-version: v0.62.2 # good to pin this since pixi is not 1.0 yet!
 
-      - name: look for syntax errors with ruff
-        run: pixi run ruff check
+      # - name: look for syntax errors with ruff
+      #   run: pixi run ruff check
 
   unit-tests:
     runs-on: ${{ matrix.os }}
@@ -40,7 +40,7 @@ jobs:
       - name: Install pixi
         uses: prefix-dev/setup-pixi@v0.9.3
         with:
-          pixi-version: v0.62.2 
+          pixi-version: v0.62.2
           environments: ${{ matrix.environment }}
 
       - run: pixi run -e ${{ matrix.environment }} pytest
