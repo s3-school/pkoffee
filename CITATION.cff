@@ -1,0 +1,18 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: pkoffee
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Thomas
+    family-names: Vuillaume
+    email: thomas.vuillaume@lapp.in2p3.fr
+identifiers:
+  - type: doi
+    value: 10.6084/m9.figshare.31049104
+repository-code: 'https://github.com/s3-school/pkoffee'
+license: MIT
