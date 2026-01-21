@@ -92,6 +92,8 @@ default = { features = ["dev", "py313"], solve-group = "prod" }
 
 # python 3.14 environments for testing
 prod314 = { features = ["py314"], solve-group = "prod314" }
+test314 = { features = ["test", "py314"], solve-group = "prod314" }
 
 # python 3.12 environments for testing
 prod312 = { features = ["py312"], solve-group = "prod312" }
+test312 = { features = ["test", "py312"], solve-group = "prod312" }

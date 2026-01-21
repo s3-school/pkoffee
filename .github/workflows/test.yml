@@ -29,9 +29,9 @@ jobs:
           - macos-latest
           - windows-latest
         environment:
-          - prod
-          - prod314
-          - prod312
+          - test
+          - test314
+          - test312
 
     steps:
       - name: Checkout the code
