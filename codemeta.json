@@ -1,0 +1,51 @@
+{
+    "@context": "https://w3id.org/codemeta/3.0",
+    "applicationCategory": "SoftwareSourceCode",
+    "author": [
+        {
+            "name": "S3-School",
+            "@id": "https://github.com/s3-school",
+            "@type": "Organization"
+        },
+        {
+            "email": "thomas.vuillaume@lapp.in2p3.fr",
+            "familyName": "Vuillaume",
+            "givenName": "Thomas",
+            "@type": "Person"
+        }
+    ],
+    "codeRepository": "https://github.com/s3-school/pkoffee",
+    "dateCreated": "2025-12-01",
+    "dateModified": "2026-01-15",
+    "description": "- **Data Analysis**: Load and analyze coffee consumption vs productivity datasets\n- **Multiple Models**: Fit various mathematical models (quadratic, Michaelis-Menten, logistic, peak functions)\n- **Visualization**: Beautiful violin plots with model overlays using Seaborn\n- **Model Comparison**: Automatic R² scoring and ranking of models\n- **Type-Safe**: Full type hints for better IDE support and code quality\n \n",
+    "downloadUrl": "https://github.com/s3-school/pkoffee/releases",
+    "funder": {
+        "name": "european commission",
+        "@type": "Organization"
+    },
+    "license": "https://spdx.org/licenses/MIT",
+    "name": "pkoffee",
+    "programmingLanguage": "Python",
+    "referencePublication": [
+        {
+            "author": [
+                {
+                    "familyName": "Dupont",
+                    "givenName": "Jean",
+                    "@type": "Person"
+                }
+            ],
+            "name": "Coffee and Developer Productivity",
+            "url": "https://doi.org/10.6084/m9.figshare.31049104",
+Click and Read
+
+            "@type": "ScholarlyArticle"
+        }
+    ],
+    "softwareRequirements": [
+        "uv_build>=0.9,<0.10.0"
+    ],
+    "version": "0.1.0",
+    "issueTracker": "https://github.com/s3-school/pkoffee/issues",
+    "@type": "SoftwareSourceCode"
+}
