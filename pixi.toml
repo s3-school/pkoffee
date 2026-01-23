@@ -11,6 +11,8 @@ python = ["3.12.*", "3.13.*", "3.14.*"]
 
 [dependencies]
 pkoffee = { path = "." }
+numpy = ">=2.4.1,<3"
+matplotlib = ">=3.10.8,<4"
 
 [package]
 name = "pkoffee"
@@ -61,14 +63,37 @@ python=">=3.14,<3.15"
 [feature.dev.dependencies]
 jupyterlab = ">=4.4.3,<5"
 
+[feature.test.dependencies]
+# example task converts notebooks to markdown to include so they can be included in documentation
+nbconvert = ">=7.16.6,<8"
+pytest = ">=9,<10"
+pytest-cov = ">=7,<8"
+
+[feature.test.tasks.test]
+args = [
+    { "arg" = "coverage_dir", "default" = "htmlcov" },
+    { "arg" = "cobertura_report", "default" = "cobertura_report.xml" },
+    { "arg" = "junit_report", "default" = "junit_report.xml"}
+]
+cmd = "pytest -vv --cov-report=html:{{ coverage_dir }} --cov-report=xml:{{ cobertura_report }} --junitxml={{ junit_report }}"
+
+
+[tasks]
+analyse = "pkoffee analyze --data-file analysis/coffee_productivity.csv --output analysis/fitted_models.toml --show-rankings"
+plot = "pkoffee plot --data-file analysis/coffee_productivity.csv --models analysis/fitted_models.toml --output analysis/analysis.png --y-max 7"
+
+
 [environments]
 prod = { features = ["py313"], solve-group = "prod" }
+test = { features = ["test", "py313"], solve-group = "prod" }
 # use default for the dev environment so tasks are resolved in this environment (avoids having to specify env)
 # no need to include doc: pixi will figure the environment to use from the task if it is unique
 default = { features = ["dev", "py313"], solve-group = "prod" }
 
 # python 3.14 environments for testing
 prod314 = { features = ["py314"], solve-group = "prod314" }
+test314 = { features = ["test", "py314"], solve-group = "prod314" }
 
 # python 3.12 environments for testing
 prod312 = { features = ["py312"], solve-group = "prod312" }
+test312 = { features = ["test", "py312"], solve-group = "prod312" }
